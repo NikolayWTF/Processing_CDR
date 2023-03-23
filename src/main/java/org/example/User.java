@@ -1,3 +1,4 @@
+// Вся информация по звонку, кроме номера телефона
 package org.example;
 
 import java.math.BigInteger;

@@ -1,3 +1,4 @@
+// Тут вычисляется сколько минут шёл разговор
 package org.example;
 
 import java.text.ParseException;

@@ -9,22 +9,28 @@ public class Main {
     public static void main(String[] args) throws ParseException, IOException {
         String[] TARIFFS_INDEX = {"03", "06", "11"};
         HashMap<BigInteger, Double> NumberAndMinutes = new HashMap<>();
-
+        // Ключ - номер телефона, значение - вся информация по этому номеру
         HashMap<BigInteger, ArrayList<User>> Users = new HashMap<>();
 
-        System.out.println("Введите данные");
-
+        //Ввод данных
         File file = new File("src\\main\\java\\org\\example\\input.txt");
         FileReader fr = new FileReader(file);
         BufferedReader reader = new BufferedReader(fr);
         String str_cdr = reader.readLine();
         while (str_cdr != null) {
 
+            // Считываю строку и делаю из неё массив
             var cdr = str_cdr.split(", ");
             String start_time = cdr[2]; String end_time = cdr[3];
+
+            // Сколько минут длился разговор
             double minutes = count_minutes(start_time, end_time);
+
+            // Узнаём индекс типа тарифа. 0 - 03, 1 - 06, 2 - 11
             String tariff_type = cdr[4];
             int tariff_index = find_element(tariff_type, TARIFFS_INDEX);
+
+            // Это мапа с номером телефона и суммарным количеством минут за все звонки
             BigInteger number = new BigInteger(cdr[1]);
             double all_minutes = minutes;
             if (NumberAndMinutes.containsKey(number)){
@@ -34,16 +40,24 @@ public class Main {
             else {
                 NumberAndMinutes.put(number, all_minutes);
             }
+
+            // Считаем стоимость разговора
             String call_type = cdr[0];
             double cost = CountCost.count_cost(call_type, all_minutes, minutes, tariff_index);
+
+            // Создаю нового пользователя
             BigInteger Start = new BigInteger(start_time);
             BigInteger End = new BigInteger(end_time);
             User user = new User(call_type, Start, End, minutes, cost, tariff_index);
+
+            // Если номер телефона уже есть - добавляем данные о новом звонке туда, иначе - добавляем номер
             ArrayList<User> UserArray;
             if (Users.containsKey(number)){
                 UserArray = Users.get(number);
                 BigInteger user_start_date = user.start_time;
                 int i = 0;
+
+                // Делаю так, чтобы звонки были отсортированы по времени
                 boolean valid = true;
                 while ((i < UserArray.size()) && (valid)){
                     BigInteger last_start_date = UserArray.get(i).start_time;
@@ -67,6 +81,7 @@ public class Main {
             str_cdr = reader.readLine();
         }
 
+        // Вывод всей информации
         List<BigInteger> keys = new ArrayList<>(Users.keySet());
 
         for (BigInteger key : keys) {
@@ -86,6 +101,7 @@ public class Main {
 
     }
 
+    // Нахождение индекса элемента в массиве
     public static int find_element(String element, String[] Array){
         int ind = 0;
         for (int i = 0; i < Array.length; i ++){
@@ -93,6 +109,8 @@ public class Main {
         }
         return ind;
     }
+
+    // Вычисление количества минут потраченных на разговор
     public static double count_minutes(String data_start, String data_end) throws ParseException {
         How_many_minutes how_many_minutes = new How_many_minutes();
         return how_many_minutes.dataToMinutes(data_start, data_end);

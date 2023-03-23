@@ -1,3 +1,5 @@
+// Тут вычисляется цена разговора для каждого тарифа
+
 package org.example;
 
 import java.util.Objects;

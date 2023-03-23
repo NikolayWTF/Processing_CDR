@@ -1,3 +1,5 @@
+// Тут выбираю нужный тариф
+
 package org.example;
 
 public class CountCost {
