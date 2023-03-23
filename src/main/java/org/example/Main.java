@@ -2,6 +2,7 @@ package org.example;
 
 import java.io.*;
 import java.math.BigInteger;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.*;
 
@@ -90,8 +91,13 @@ public class Main {
             File ans = new File(filepath);
             StringBuilder text = new StringBuilder("Tariff index: " + user_array.get(0).tariff_index + "\n--------------------------------------------------------------------------------------\n");
             text.append("Report for phone number: ").append(key).append("\n--------------------------------------------------------------------------------------\n| Call Type |   Start Time        |     End Time        | Duration | Cost  |\n--------------------------------------------------------------------------------------\n");
+            String start_time_str; String end_time_str; String duration_str;
             for (User user : user_array) {
-                text.append("|     ").append(user.call_type).append("    | ").append(user.start_time).append(" | ").append(user.end_time).append(" | ").append(user.duration).append(" | ").append(user.cost).append(" | ").append("\n");
+                start_time_str = Date_formating.Data_format(user.start_time);
+                end_time_str = Date_formating.Data_format(user.end_time);
+                duration_str = Duration_formating.Duration_format(user.duration);
+                DecimalFormat decimalFormat = new DecimalFormat( "#.##" );
+                text.append("|     ").append(user.call_type).append("    | ").append(start_time_str).append(" | ").append(end_time_str).append(" | ").append(duration_str).append(" | ").append(decimalFormat.format(user.cost)).append(" | ").append("\n");
             }
             FileWriter writer = new FileWriter(ans);
             writer.write(text.toString());
