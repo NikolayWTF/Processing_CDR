@@ -2,14 +2,14 @@ package org.example;
 
 import java.util.Objects;
 
-public class Tarifs {
+public class Tariffs {
 
     public static double per_minute_rate(double minutes){
         return minutes * 1.5;
     }
 
     public static double Unlimited_300(double all_minutes, double minutes){
-        double cost = 0;
+        double cost;
         if (all_minutes <= 300){
             cost = 0;
         } else if (all_minutes - minutes > 300) {
