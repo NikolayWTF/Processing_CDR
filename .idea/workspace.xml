@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2997f1ee-b32c-4229-a00b-52770a1c835d" name="Changes" comment="Добавил комментарии">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Date_formating.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Duration_formating.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="2997f1ee-b32c-4229-a00b-52770a1c835d" name="Changes" comment="Отформатировал дату и длительность разговора в итоговом файле">
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/answers/73160252296.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/answers/73160252296.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/answers/73734435243.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/answers/73734435243.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/answers/79270106185.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/answers/79270106185.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/answers/73160252296.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/answers/73734435243.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/answers/79270106185.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/cdr.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +44,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -103,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679596667230</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Отформатировал дату и длительность разговора в итоговом файле">
+      <created>1679599248178</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679599248178</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -111,6 +116,7 @@
     <MESSAGE value="MVP" />
     <MESSAGE value="Убрал warnings" />
     <MESSAGE value="Добавил комментарии" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил комментарии" />
+    <MESSAGE value="Отформатировал дату и длительность разговора в итоговом файле" />
+    <option name="LAST_COMMIT_MESSAGE" value="Отформатировал дату и длительность разговора в итоговом файле" />
   </component>
 </project>

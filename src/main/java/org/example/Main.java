@@ -14,7 +14,7 @@ public class Main {
         HashMap<BigInteger, ArrayList<User>> Users = new HashMap<>();
 
         //Ввод данных
-        File file = new File("src\\main\\java\\org\\example\\input.txt");
+        File file = new File("src\\main\\java\\org\\example\\cdr.txt");
         FileReader fr = new FileReader(file);
         BufferedReader reader = new BufferedReader(fr);
         String str_cdr = reader.readLine();
