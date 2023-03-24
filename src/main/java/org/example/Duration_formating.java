@@ -1,3 +1,4 @@
+// Делаю красивый вывод длительности разговора
 package org.example;
 
 import java.math.BigInteger;

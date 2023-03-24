@@ -45,7 +45,7 @@ public class Main {
             String call_type = cdr[0];
             double cost = CountCost.count_cost(call_type, all_minutes, minutes, tariff_index);
 
-            // Создаю нового пользователя
+            // Создаю новый звонок
             BigInteger Start = new BigInteger(start_time);
             BigInteger End = new BigInteger(end_time);
             Call call = new Call(call_type, Start, End, minutes, cost, tariff_index);
