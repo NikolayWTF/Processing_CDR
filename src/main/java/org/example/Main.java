@@ -83,21 +83,26 @@ public class Main {
 
         // Вывод всей информации
         List<BigInteger> keys = new ArrayList<>(Cals.keySet());
-
+        double total_cost;
         for (BigInteger key : keys) {
+            total_cost = 0;
             ArrayList<Call> call_array = Cals.get(key);
             String filepath = "src\\main\\java\\org\\example\\answers\\" + key + ".txt";
             File ans = new File(filepath);
-            StringBuilder text = new StringBuilder("Tariff index: " + call_array.get(0).tariff_index + "\n--------------------------------------------------------------------------------------\n");
-            text.append("Report for phone number: ").append(key).append("\n--------------------------------------------------------------------------------------\n| Call Type |   Start Time        |     End Time        | Duration | Cost  |\n--------------------------------------------------------------------------------------\n");
+            StringBuilder text = new StringBuilder("Tariff index: " + call_array.get(0).tariff_index + "\n-----------------------------------------------------------------------------\n");
+            text.append("Report for phone number: ").append(key).append("\n-----------------------------------------------------------------------------\n| Call Type |   Start Time        |     End Time        | Duration | Cost  |\n-----------------------------------------------------------------------------\n");
             String start_time_str; String end_time_str; String duration_str;
+            DecimalFormat decimalFormat = new DecimalFormat( "#.##" );
             for (Call call : call_array) {
                 start_time_str = Date_formating.Data_format(call.start_time);
                 end_time_str = Date_formating.Data_format(call.end_time);
                 duration_str = Duration_formating.Duration_format(call.duration);
-                DecimalFormat decimalFormat = new DecimalFormat( "#.##" );
+                total_cost += call.cost;
                 text.append("|     ").append(call.call_type).append("    | ").append(start_time_str).append(" | ").append(end_time_str).append(" | ").append(duration_str).append(" | ").append(decimalFormat.format(call.cost)).append(" | ").append("\n");
             }
+            text.append("-----------------------------------------------------------------------------\n");
+            text.append("                                                       Total cost: | ").append(decimalFormat.format(total_cost)).append(" |\n");
+            text.append("-----------------------------------------------------------------------------");
             FileWriter writer = new FileWriter(ans);
             writer.write(text.toString());
             writer.close();
